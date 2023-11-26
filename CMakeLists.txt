@@ -14,7 +14,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fmt)
 FetchContent_MakeAvailable(sfml)
-add_executable(ChoTR_1 main.cpp)
+add_executable(ChoTR_1 main.cpp
+        src/game/Game.cpp
+        src/game/Game.h
+        ui/Button.cpp
+        ui/Button.h
+        src/game/MenuState.cpp
+        src/game/MenuState.h)
 target_link_libraries(
         ChoTR_1
         fmt

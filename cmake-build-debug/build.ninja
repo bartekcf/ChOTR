@@ -57,6 +57,30 @@ build CMakeFiles/ChoTR_1.dir/main.cpp.obj: CXX_COMPILER__ChoTR_1_unscanned_Debug
   OBJECT_DIR = CMakeFiles\ChoTR_1.dir
   OBJECT_FILE_DIR = CMakeFiles\ChoTR_1.dir
 
+build CMakeFiles/ChoTR_1.dir/src/game/Game.cpp.obj: CXX_COMPILER__ChoTR_1_unscanned_Debug E$:/GAME/ChoTR_1/src/game/Game.cpp || cmake_object_order_depends_target_ChoTR_1
+  DEFINES = -DFMT_SHARED
+  DEP_FILE = CMakeFiles\ChoTR_1.dir\src\game\Game.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IE:/GAME/ChoTR_1/cmake-build-debug/_deps/fmt-src/include -IE:/GAME/ChoTR_1/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\ChoTR_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChoTR_1.dir\src\game
+
+build CMakeFiles/ChoTR_1.dir/ui/Button.cpp.obj: CXX_COMPILER__ChoTR_1_unscanned_Debug E$:/GAME/ChoTR_1/ui/Button.cpp || cmake_object_order_depends_target_ChoTR_1
+  DEFINES = -DFMT_SHARED
+  DEP_FILE = CMakeFiles\ChoTR_1.dir\ui\Button.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IE:/GAME/ChoTR_1/cmake-build-debug/_deps/fmt-src/include -IE:/GAME/ChoTR_1/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\ChoTR_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChoTR_1.dir\ui
+
+build CMakeFiles/ChoTR_1.dir/src/game/MenuState.cpp.obj: CXX_COMPILER__ChoTR_1_unscanned_Debug E$:/GAME/ChoTR_1/src/game/MenuState.cpp || cmake_object_order_depends_target_ChoTR_1
+  DEFINES = -DFMT_SHARED
+  DEP_FILE = CMakeFiles\ChoTR_1.dir\src\game\MenuState.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IE:/GAME/ChoTR_1/cmake-build-debug/_deps/fmt-src/include -IE:/GAME/ChoTR_1/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\ChoTR_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\ChoTR_1.dir\src\game
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ChoTR_1
@@ -65,7 +89,7 @@ build CMakeFiles/ChoTR_1.dir/main.cpp.obj: CXX_COMPILER__ChoTR_1_unscanned_Debug
 #############################################
 # Link the executable ChoTR_1.exe
 
-build ChoTR_1.exe: CXX_EXECUTABLE_LINKER__ChoTR_1_Debug CMakeFiles/ChoTR_1.dir/main.cpp.obj | _deps/fmt-build/libfmtd.dll.a _deps/sfml-build/lib/libsfml-graphics-d.a _deps/sfml-build/lib/libsfml-window-d.a _deps/sfml-build/lib/libsfml-system-d.a || _deps/fmt-build/bin/libfmtd.dll _deps/sfml-build/lib/sfml-graphics-d-2.dll _deps/sfml-build/lib/sfml-system-d-2.dll _deps/sfml-build/lib/sfml-window-d-2.dll
+build ChoTR_1.exe: CXX_EXECUTABLE_LINKER__ChoTR_1_Debug CMakeFiles/ChoTR_1.dir/main.cpp.obj CMakeFiles/ChoTR_1.dir/src/game/Game.cpp.obj CMakeFiles/ChoTR_1.dir/ui/Button.cpp.obj CMakeFiles/ChoTR_1.dir/src/game/MenuState.cpp.obj | _deps/fmt-build/libfmtd.dll.a _deps/sfml-build/lib/libsfml-graphics-d.a _deps/sfml-build/lib/libsfml-window-d.a _deps/sfml-build/lib/libsfml-system-d.a || _deps/fmt-build/bin/libfmtd.dll _deps/sfml-build/lib/sfml-graphics-d-2.dll _deps/sfml-build/lib/sfml-system-d-2.dll _deps/sfml-build/lib/sfml-window-d-2.dll
   FLAGS = -g
   LINK_LIBRARIES = _deps/fmt-build/libfmtd.dll.a  _deps/sfml-build/lib/libsfml-graphics-d.a  _deps/sfml-build/lib/libsfml-window-d.a  _deps/sfml-build/lib/libsfml-system-d.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ChoTR_1.dir

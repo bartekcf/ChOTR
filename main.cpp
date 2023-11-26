@@ -1,6 +1,7 @@
 #include <iostream>
+#include "src/game/Game.h"
 
 auto main() -> int {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Game game;
+    game.run();
 }
