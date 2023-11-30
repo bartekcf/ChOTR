@@ -1,19 +1,28 @@
 // Button.cpp
 
+#include <iostream>
 #include "Button.h"
 
-Button::Button(const sf::Texture& texture, const sf::Vector2f& position, const sf::Vector2f& size, const std::string& buttonText)
+Button::Button(const sf::Font& font, const sf::Texture& texture, const sf::Vector2f& position, const sf::Vector2f& size, const std::string& buttonText)
 {
     // Ustawienie tekstury i pozycji sprite'a
     sprite.setTexture(texture);
     sprite.setPosition(position);
     sprite.setScale(size.x / texture.getSize().x, size.y / texture.getSize().y);
 
-    // Konfiguracja tekstu (możesz tutaj dodać więcej ustawień, jak czcionka, kolor itp.)
+    // Konfiguracja tekstu
     text.setString(buttonText);
-    text.setPosition(position);
-    // text.setFont(...); // Ustaw czcionkę
-    // text.setCharacterSize(...); // Ustaw rozmiar tekstu
+    text.setFillColor(sf::Color::White);
+    text.setFont(font);
+
+    // Obliczanie środka sprite'a
+    sf::FloatRect spriteBounds = sprite.getGlobalBounds();
+    sf::FloatRect textBounds = text.getLocalBounds();
+
+    text.setOrigin(textBounds.left + textBounds.width/2.0f,
+                   textBounds.top  + textBounds.height/2.0f);
+    text.setPosition(spriteBounds.left + spriteBounds.width/2.0f,
+                     spriteBounds.top + spriteBounds.height/2.0f);
 }
 
 void Button::handleInput(const sf::Event& event, const sf::RenderWindow& window)

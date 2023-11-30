@@ -8,7 +8,7 @@
 class Button {
 public:
     // Konstruktor przycisku z parametrami dla tekstury, pozycji, rozmiaru i tekstu
-    Button(const sf::Texture& texture, const sf::Vector2f& position, const sf::Vector2f& size, const std::string& text);
+    Button(const sf::Font& font, const sf::Texture& texture, const sf::Vector2f& position, const sf::Vector2f& size, const std::string& text);
 
     // Obsługa zdarzeń wejściowych
     void handleInput(const sf::Event& event, const sf::RenderWindow& window);

@@ -19,6 +19,10 @@ private:
     sf::Sprite backgroundSprite;
     sf::Texture backgroundTexture; // Przeniesienie do składowych klasy
     std::vector<std::unique_ptr<Button>> buttons;
+    sf::Texture buttonTexture;
+    sf::Font font;
+
+    void initButtons();
 };
 
 #endif // MENUSTATE_H
