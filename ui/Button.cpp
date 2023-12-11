@@ -14,6 +14,7 @@ Button::Button(const sf::Font& font, const sf::Texture& texture, const sf::Vecto
     text.setString(buttonText);
     text.setFillColor(sf::Color::White);
     text.setFont(font);
+    text.setCharacterSize(50);
 
     // Obliczanie środka sprite'a
     sf::FloatRect spriteBounds = sprite.getGlobalBounds();

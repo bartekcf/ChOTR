@@ -1,10 +1,11 @@
 #include "MenuState.h"
 #include <iostream>
+#include <filesystem>
 
-MenuState::MenuState(sf::RenderWindow& window, GameStateManager& manager)
-        : mWindow(window), gameStateManager(manager) {
+MenuState::MenuState(sf::RenderWindow& window, GameStateManager& manager) : mWindow(window), gameStateManager(manager) {
+    std::cout << "Current path is_1 " << std::filesystem::current_path() << std::endl;
+
     if (!backgroundTexture.loadFromFile("../assets/images/background.png")) {
-        std::cout << "Nie udało się załadować pliku" << std::endl;
         return;
     }
     backgroundSprite.setTexture(backgroundTexture);
@@ -16,27 +17,29 @@ MenuState::~MenuState() {
     // Tutaj możesz umieścić logikę czyszczenia, jeśli jest potrzebna
 }
 
+
 void MenuState::initButtons() {
-    if (!buttonTexture.loadFromFile("../assets/images/button.jpg")) {
-        std::cout << "Nie udało się załadować tekstury przycisku" << std::endl;
+    std::cout << "Current path is " << std::filesystem::current_path() << std::endl;
+
+
+    if (!buttonTexture.loadFromFile("../assets/images/img.png")) {
         return;
     }
 
     if (!font.loadFromFile("../assets/fonts/font.ttf")) {
-        std::cout << "Nie udało się załadować czcionki" << std::endl;
         return;
     }
 
-    buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 300), sf::Vector2f(200, 50), "Nowa Gra"));
-    buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 400), sf::Vector2f(200, 50), "Wczytaj Gre"));
-    buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 500), sf::Vector2f(200, 50), "Opcje"));
+    buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 280), sf::Vector2f(250, 150), "Nowa Gra"));
+    buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 380), sf::Vector2f(250, 150), "Wczytaj Gre"));
+    buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 480), sf::Vector2f(250, 150), "Opcje"));
 
     buttons[0]->setCallback([this]() {
         // Tutaj implementacja przejścia do innego stanu, np. wyboru postaci
         // gameStateManager.changeState(new CharacterSelectionState(mWindow, gameStateManager));
     });
 
-    // Dalsze callbacki dla innych przycisków...
+
 }
 
 void MenuState::handleInput(sf::RenderWindow& window) {

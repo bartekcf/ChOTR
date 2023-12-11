@@ -34,6 +34,5 @@ void Game::update(sf::Time deltaTime) {
 
 void Game::render() {
     mWindow.clear();
-    gameStateManager.getCurrentState()->render(mWindow); // Renderowanie bieżącego stanu
-    mWindow.display();
+    gameStateManager.getCurrentState()->render(mWindow);
 }
