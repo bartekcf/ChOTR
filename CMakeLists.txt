@@ -20,7 +20,10 @@ add_executable(ChoTR_1 main.cpp
         ui/Button.cpp
         ui/Button.h
         src/game/MenuState.cpp
-        src/game/MenuState.h)
+        src/game/MenuState.h
+        src/game/GameStateManager.cpp
+        src/game/GameStateManager.h
+        src/game/GameState.h)
 target_link_libraries(
         ChoTR_1
         fmt

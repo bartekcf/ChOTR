@@ -1,17 +1,11 @@
-// Game.cpp
-
-//
-// Created by Bartek Kedziora on 26.11.2023.
-//
-
-
 #include "Game.h"
+#include "MenuState.h" // Upewnij się, że masz taki plik i klasę
 
-Game::Game() : mWindow(sf::VideoMode(1000, 800), "Chronicles Of The Ringmasters"), mIsRunning(true), menuState(mWindow) {
-    // Inicjalizacja zasobów gry
+Game::Game() : mWindow(sf::VideoMode(1000, 800), "Chronicles Of The Ringmasters"), mIsRunning(true) {
+    gameStateManager.addState(new MenuState(mWindow, gameStateManager));
 }
+
 Game::~Game() {
-    // Zwalnianie zasobów
 }
 
 void Game::run() {
@@ -29,16 +23,17 @@ void Game::processEvents() {
         if (event.type == sf::Event::Closed) {
             mWindow.close();
         }
-        menuState.handleInput(); // Dodaj obsługę zdarzeń dla menu
+
+        gameStateManager.getCurrentState()->handleInput(mWindow);
     }
 }
 
 void Game::update(sf::Time deltaTime) {
-    menuState.update(deltaTime); // Aktualizacja stanu menu
+    gameStateManager.getCurrentState()->update(deltaTime); // Aktualizacja bieżącego stanu
 }
 
 void Game::render() {
     mWindow.clear();
-    menuState.render(); // Renderowanie stanu menu
-//    mWindow.display(); // to narazie mi mryga ekran mocno
+    gameStateManager.getCurrentState()->render(mWindow); // Renderowanie bieżącego stanu
+    mWindow.display();
 }

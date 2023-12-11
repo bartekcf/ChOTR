@@ -8,6 +8,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "MenuState.h"
+#include "GameStateManager.h"
+
 
 class Game {
 public:
@@ -22,7 +24,8 @@ private:
 
     sf::RenderWindow mWindow; // Okno gry
     bool mIsRunning; // Status działania gry
-    MenuState menuState; // Dodanie stanu menu
+    GameStateManager gameStateManager; // Dodanie stanu gry
+
 
 };
 
