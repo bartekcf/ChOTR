@@ -25,7 +25,7 @@ set(error_code 1)
 set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
-    COMMAND "C:/Program Files/Git/cmd/git.exe" 
+    COMMAND "C:/Program Files/Git/cmd/git.exe"
             clone --no-checkout --config "advice.detachedHead=false" "https://github.com/fmtlib/fmt" "fmt-src"
     WORKING_DIRECTORY "E:/GAME/ChoTR_1/cmake-build-debug/_deps"
     RESULT_VARIABLE error_code
@@ -40,7 +40,7 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "C:/Program Files/Git/cmd/git.exe" 
+  COMMAND "C:/Program Files/Git/cmd/git.exe"
           checkout "10.1.1" --
   WORKING_DIRECTORY "E:/GAME/ChoTR_1/cmake-build-debug/_deps/fmt-src"
   RESULT_VARIABLE error_code
