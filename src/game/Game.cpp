@@ -2,6 +2,13 @@
 #include "MenuState.h" // Upewnij się, że masz taki plik i klasę
 
 Game::Game() : mWindow(sf::VideoMode(1000, 800), "Chronicles Of The Ringmasters"), mIsRunning(true) {
+    sf::Image cursorImage;
+    if (cursorImage.loadFromFile("../assets/images/cursor.png")) {
+        sf::Cursor cursor;
+        if (cursor.loadFromPixels(cursorImage.getPixelsPtr(), cursorImage.getSize(), sf::Vector2u(0, 0))) {
+            mWindow.setMouseCursor(cursor);
+        }
+    }
     gameStateManager.addState(new MenuState(mWindow, gameStateManager));
 }
 

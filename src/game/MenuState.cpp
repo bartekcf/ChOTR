@@ -1,9 +1,10 @@
 #include "MenuState.h"
-#include <iostream>
+#include "NewGameState.h"
 #include <filesystem>
+#include <fmt/ranges.h>
 
 MenuState::MenuState(sf::RenderWindow& window, GameStateManager& manager) : mWindow(window), gameStateManager(manager) {
-    std::cout << "Current path is_1 " << std::filesystem::current_path() << std::endl;
+//    std::cout << "Current path is_1 " << std::filesystem::current_path() << std::endl;
 
     if (!backgroundTexture.loadFromFile("../assets/images/background.png")) {
         return;
@@ -19,7 +20,6 @@ MenuState::~MenuState() {
 
 
 void MenuState::initButtons() {
-    std::cout << "Current path is " << std::filesystem::current_path() << std::endl;
 
 
     if (!buttonTexture.loadFromFile("../assets/images/img.png")) {
@@ -35,8 +35,8 @@ void MenuState::initButtons() {
     buttons.push_back(std::make_unique<Button>(font, buttonTexture, sf::Vector2f(400, 480), sf::Vector2f(250, 150), "Opcje"));
 
     buttons[0]->setCallback([this]() {
-        // Tutaj implementacja przejścia do innego stanu, np. wyboru postaci
-        // gameStateManager.changeState(new CharacterSelectionState(mWindow, gameStateManager));
+          fmt::println("test");
+//        gameStateManager.changeState(new NewGameState(mWindow, gameStateManager));
     });
 
 
